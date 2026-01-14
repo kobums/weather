@@ -1,0 +1,1 @@
+export { FavoriteWeatherCard } from './FavoriteWeatherCard';
