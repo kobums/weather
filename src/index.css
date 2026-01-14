@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(
+    180deg,
+    #87ceeb 0%,
+    #b0e0e6 30%,
+    #e0f6ff 70%,
+    #f0f8ff 100%
+  );
+  color: #1a3a5c;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  transition: background 1s ease;
+}
+
+body.night {
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 40%, #334155 100%);
+  color: #e2e8f0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
