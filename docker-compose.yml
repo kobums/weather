@@ -1,0 +1,18 @@
+services:
+  web:
+    image: kobums/weather_web:${VERSION:-latest}
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/amd64
+      args:
+        - BUILDKIT_INLINE_CACHE=1
+      shm_size: '2gb'
+    container_name: weather_web
+    ports:
+      - '9005:9005'
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
